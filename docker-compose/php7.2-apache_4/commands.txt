@@ -1,0 +1,3 @@
+docker-compose up --build
+
+In browser ip:8080 check the presence of mysqli

@@ -1,0 +1,9 @@
+docker-compose up
+
+see in the browser ip:8080
+
+index.php 	simply connects to the DB printing a message
+index2.php 	contains a query to the DB 
+
+the container reads the file index.php 
+so switch to the 2 php files and see the result without restarting

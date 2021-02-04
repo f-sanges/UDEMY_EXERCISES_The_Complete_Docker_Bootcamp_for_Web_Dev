@@ -1,0 +1,6 @@
+docker build -t my_php_app .									-> to build the image
+
+docker run --name myphp-apache -p 8000:8000 my_php_app			-> to run a container
+
+
+Check on browser at port 

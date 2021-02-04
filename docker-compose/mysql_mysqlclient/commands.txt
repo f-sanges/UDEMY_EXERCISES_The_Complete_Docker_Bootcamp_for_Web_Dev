@@ -1,0 +1,18 @@
+Create a dir inside the host named data (used for volume)
+
+docker-compose up
+
+one of the services (dbclient) will exit so:
+
+docker-compose run --rm dbclient
+
+
+execute some commands in the sql client:
+
+mysql> USE somedatabase;
+mysql> SHOW TABLES;
+mysql> CREATE TABLE mytable (id INT);
+mysql> SHOW TABLES;
+
+creates 
+

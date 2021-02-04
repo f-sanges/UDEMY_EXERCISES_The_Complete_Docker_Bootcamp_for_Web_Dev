@@ -1,0 +1,22 @@
+This version use the shell script wait-for-it.sh (downloaded at https://github.com/vishnubob/wait-for-it)
+It waits until the db is ready.
+YOu have to change the permits with chmod u+x wait-for-it.sh
+
+Create a dir inside the host named data (used for volume)
+
+docker-compose up
+
+one of the services (dbclient) will exit so:
+
+docker-compose run --rm dbclient
+
+
+execute some commands in the sql client:
+
+mysql> USE somedatabase;
+mysql> SHOW TABLES;
+mysql> CREATE TABLE mytable (id INT);
+mysql> SHOW TABLES;
+
+creates 
+
