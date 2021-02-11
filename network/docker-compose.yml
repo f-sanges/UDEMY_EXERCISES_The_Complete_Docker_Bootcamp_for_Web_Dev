@@ -1,0 +1,28 @@
+version: "3.7"
+
+services:
+    app1:
+        image: httpd:latest
+        container_name: app1
+        ports:
+            - 8080:80
+        networks:
+            - app1_net
+            
+networks:
+    app1_net:           # this will create a network called <DIR>_<NETWORK_NAME>; in my case network_app1_net
+                        # the service app1 will be connected to this network (check sha):
+                        #    [docker@centos7 ~]$ docker network ls
+                        #    NETWORK ID     NAME               DRIVER    SCOPE
+                        #    61c98f7b6120   bridge             bridge    local
+                        #    30611446310e   host               host      local
+                        #    e0efab72e410   network_app1_net   bridge    local
+                        #    5574f983a7a1   none               null      local
+                        #    
+                        #    [docker@centos7 ~]$ docker inspect 27161b9645df | grep -i network
+                        #                "NetworkMode": "network_app1_net",
+                        #                    "com.docker.compose.project": "network",
+                        #            "NetworkSettings": {
+                        #                "Networks": {
+                        #                    "network_app1_net": {
+                        #                        "NetworkID": "e0efab72e41022ccd565553fedef70988b7c06e846dbc245353f0d4beae18c71",
